@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  testrun:22:
+  testrun22:
     docker:
     - image: circleci/erlang:22.0.4
     steps:
