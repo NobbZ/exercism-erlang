@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  testrun:22:
+    docker:
+    - image: circleci/erlang:22.0.4
+    steps:
+    - checkout
+    - run:
+        name: Run the tests
+        command: ./bin/journey-test.sh
