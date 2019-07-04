@@ -1,17 +1,30 @@
 version: 2.1
 
+.journey: &journey
+  steps:
+  - checkout
+  - run:
+      name: run the tests
+      command: ./bin/journey-test.sh
+
 jobs:
-  testrun22:
+  journey22:
     docker:
     - image: circleci/erlang:22.0.4
-    steps:
-    - checkout
-    - run:
-        name: Run the tests
-        command: ./bin/journey-test.sh
+    <<: *journey
+  journey21:
+    docker:
+    - image: circleci/erlang:21.3.8.4
+    <<: *journey
+  journey20:
+    docker:
+    - image: circleci/erlang:20.3.8.22
+    <<: *journey
 
 workflows:
   version: 2
   test:
     jobs:
-    - testrun22
+    - journey22
+    - journey21
+    - journey20
