@@ -39,6 +39,9 @@ jobs:
     steps:
     - checkout
     - run:
+        name: pull problem spec
+        command: git submodule update --recursive --init
+    - run:
         name: build testgenerator
         command: make run_testgen
 
