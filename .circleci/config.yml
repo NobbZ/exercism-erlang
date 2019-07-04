@@ -21,10 +21,23 @@ jobs:
     - image: circleci/erlang:20.3.8.22
     <<: *journey
 
+  configlet:
+    docker:
+    - image: debian:latest
+    steps:
+    - checkout
+    - run:
+        name: check track config
+        command: ./bin/fetch-configlet && ./bin/configlet lint .
+
 workflows:
   version: 2
   test:
     jobs:
-    - journey22
-    - journey21
-    - journey20
+    - configlet
+    - journey22:
+        requires: ["configlet"]
+    - journey21:
+        requires: ["configlet"]
+    - journey20:
+        requires: ["configlet"]
