@@ -28,7 +28,7 @@ jobs:
     - checkout
     - run:
         name: install dependencies
-        command: apt install curl
+        command: apt update && apt install curl
     - run:
         name: check track config
         command: ./bin/fetch-configlet && ./bin/configlet lint .
