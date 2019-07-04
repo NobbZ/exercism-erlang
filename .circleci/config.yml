@@ -9,3 +9,9 @@ jobs:
     - run:
         name: Run the tests
         command: ./bin/journey-test.sh
+
+workflows:
+  version: 2
+  test:
+    jobs:
+    - testrun22
