@@ -33,6 +33,14 @@ jobs:
         name: check track config
         command: ./bin/fetch-configlet && ./bin/configlet lint .
 
+  buildtestgen:
+    docker:
+    - image: circleci/erlang:22
+    steps:
+    - run:
+        name: build testgenerator
+        command: make run_testgen
+
 workflows:
   version: 2
   test:
@@ -43,4 +51,6 @@ workflows:
     - journey21:
         requires: ["configlet"]
     - journey20:
+        requires: ["configlet"]
+    - buildtestgen:
         requires: ["configlet"]
