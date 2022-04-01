@@ -1,0 +1,22 @@
+{
+    "blurb": "TODO.",
+    "authors": [
+        "TODO"
+    ],
+    "contributors": [
+        "TODO"
+    ],
+    "files": {
+        "solution": [
+            "src/binary_search_tree.erl"
+        ],
+        "test": [
+            "test/binary_search_tree_tests.erl"
+        ],
+        "example": [
+            ".meta/example.erl"
+        ]
+    },
+    "source": "TODO",
+    "source_url": "binary_search_tree.erl"
+}
