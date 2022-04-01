@@ -955,6 +955,19 @@
         "prerequisites": [],
         "difficulty": 3,
         "topics": []
+      },
+      {
+        "slug": "binary-search-tree",
+        "name": "Binary Search Tree",
+        "uuid": "a8f7f17e-567b-43ec-9ee5-6288367f0ae4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "recursion",
+          "searching",
+          "trees"
+        ]
       }
     ],
     "foregone": [
